@@ -52,7 +52,7 @@ const PopulationCharts = () => {
   return (
     <div className="min-h-screen p-4" 
     style={{
-      background: 'radial-gradient(circle, rgba(192,238,242,1) 0%, rgba(218,246,249,1) 10%, rgba(255,255,255,1) 100%)'
+      background: 'radial-gradient(circle, hsla(205, 94%, 72%, 1) 0%, hsla(201, 92%, 85%, 1) 38%, hsla(200, 93%, 88%, 1) 64%, hsla(201, 95%, 92%, 1) 100%)'
     }}>
       <div className="w-full h-full flex flex-col">
         {/* Dashboard Title */}
