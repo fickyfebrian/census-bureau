@@ -9,16 +9,16 @@ const PieChart = ({ data }) => {
 
   const generateColors = (numColors) => {
     return [
-      "rgba(255, 99, 132, 0.7)",
-      "rgba(54, 162, 235, 0.7)",
-      "rgba(255, 206, 86, 0.7)",
-      "rgba(75, 192, 192, 0.7)",
-      "rgba(153, 102, 255, 0.7)",
-      "rgba(255, 159, 64, 0.7)",
-      "rgba(255, 99, 132, 0.7)",
-      "rgba(54, 162, 235, 0.7)",
-      "rgba(255, 206, 86, 0.7)",
-      "rgba(75, 192, 192, 0.7)",
+      "rgba(84, 190, 205, 0.7)",     
+      "rgba(115, 201, 214, 0.7)",   
+      "rgba(147, 213, 220, 0.7)",    
+      "rgba(176, 223, 228, 0.7)",    
+      "rgba(199, 232, 235, 0.7)",    
+      "rgba(220, 239, 241, 0.7)",    
+      "rgba(169, 217, 223, 0.7)",    
+      "rgba(132, 207, 214, 0.7)",    
+      "rgba(100, 196, 205, 0.7)",    
+      "rgba(92, 187, 199, 0.7)",     
     ].slice(0, numColors);
   };
 
@@ -33,8 +33,9 @@ const PieChart = ({ data }) => {
       {
         data: data.map((item) => item.Population),
         backgroundColor: backgroundColors,
-        borderColor: borderColors,
-        borderWidth: 1,
+        borderColor: borderColors.slice(0, data.length),
+        borderWidth: 0,
+        hoverBorderWidth: 3,
       },
     ],
   };
@@ -50,6 +51,7 @@ const PieChart = ({ data }) => {
           font: {
             size: 12,
           },
+          color: '#666',
         },
       },
       title: {
@@ -78,8 +80,9 @@ const PieChart = ({ data }) => {
 
   return (
     <div style={{ width: "100%", height: "100%" }}>
-      {/* Menetapkan ukuran 100% */}
-      <h2 className="text-3xl font-semibold text-gray-800 mb-4">Pie Chart</h2>
+      <h2 className="text-md md:text-xl lg:text-2xl font-semibold text-gray-800 mb-4">
+        Pie Chart
+      </h2>
       <Pie data={chartData} options={options} />
     </div>
   );

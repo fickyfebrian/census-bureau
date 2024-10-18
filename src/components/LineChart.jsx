@@ -29,8 +29,8 @@ const LineChart = ({ data }) => {
         label: "Populasi",
         data: data.map((item) => item.Population),
         fill: false,
-        backgroundColor: "rgba(75,192,192,0.4)",
-        borderColor: "rgba(75,192,192,1)",
+        backgroundColor: "rgb(8, 131, 149)",
+        borderColor: "rgb(55, 183, 195)",
       },
     ],
   };
@@ -56,7 +56,7 @@ const LineChart = ({ data }) => {
   return (
     <div style={{ width: "100%", height: "100%" }}>
       {/* Menetapkan ukuran 100% */}
-      <h2 className="text-3xl font-semibold text-gray-800 mb-4">Line Chart</h2>
+      <h2 className="text-md md:text-xl lg:text-2xl font-semibold text-gray-800 mb-4">Line Chart</h2>
       {data.length > 0 ? (
         <Line className="h-[]" data={chartData} options={options} />
       ) : (

@@ -50,7 +50,10 @@ const PopulationCharts = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <div className="min-h-screen p-4" 
+    style={{
+      background: 'radial-gradient(circle, rgba(192,238,242,1) 0%, rgba(218,246,249,1) 10%, rgba(255,255,255,1) 100%)'
+    }}>
       <div className="w-full h-full flex flex-col">
         {/* Dashboard Title */}
         <CensusInfo />
@@ -60,15 +63,15 @@ const PopulationCharts = () => {
           {/* Left Column: Line Chart and Pie Chart */}
           <div className="lg:col-span-2 flex flex-col gap-4">
             {/* Line Chart Section */}
-            <div className="bg-white shadow-lg rounded-lg p-4 flex-grow">
-              <div className="h-[350px] p-7">
+            <div className="bg-white rounded-lg flex-grow">
+              <div className="h-[270px] md:h-[220px] lg:h-[340px] p-7 mb-4">
                 <LineChart data={filteredData} />
               </div>
             </div>
 
             {/* Pie Chart Section */}
-            <div className="bg-white shadow-lg rounded-lg p-4 flex-grow">
-              <div className="h-[350px] p-12">
+            <div className="bg-white rounded-lg p-4 flex-grow">
+              <div className="h-[270px] md:h-[370px] lg:h-[340px] p-7 mb-4">
                 <PieChart data={filteredData} />
               </div>
             </div>
@@ -77,7 +80,7 @@ const PopulationCharts = () => {
           {/* Right Column: Filter and Population Table */}
           <div className="lg:col-span-1 grid grid-cols-1 gap-4">
             {/* Filter Section */}
-            <div className="bg-white shadow-lg rounded-lg p-6">
+            <div className="bg-white rounded-lg p-6">
               <FilterData
                 data={data}
                 startYear={startYear}
@@ -87,7 +90,7 @@ const PopulationCharts = () => {
             </div>
 
             {/* Population Table Section */}
-            <div className="bg-white shadow-lg rounded-lg p-4 flex-grow">
+            <div className="bg-white rounded-lg flex-grow">
               <div className="flex-grow overflow-auto">
                 <PopulationTable data={data} formatNumber={formatNumber} />
               </div>
